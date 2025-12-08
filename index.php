@@ -234,10 +234,10 @@ if ($url_base === '?') $url_base = '?';
         </form>
     </section>
 
-    <!-- Mensajes simples (fallback si no hay SweetAlert2) -->
+    // Mensajes simples
     <div id="msg" class="msg" style="display:none;"></div>
 
-    <!-- Modal de Edición -->
+    // Edición
     <div id="modal-editar" class="modal" style="display:none;">
         <div class="modal-content">
             <span class="close" onclick="cerrarModal()">&times;</span>
@@ -273,9 +273,8 @@ if ($url_base === '?') $url_base = '?';
     </div>
 
     <script>
-        // ========================================================================
-        // FUNCIÓN PARA MOSTRAR MENSAJES
-        // ========================================================================
+        // Mostrar mensajes
+
         function mostrarMsg(text, ok = true) {
             // Opción 1: Con SweetAlert2 (más elegante)
             if (typeof Swal !== 'undefined') {
@@ -296,9 +295,10 @@ if ($url_base === '?') $url_base = '?';
             }
         }
 
-        // ========================================================================
-        // AGREGAR NUEVO GUERRERO
-        // ========================================================================
+
+        // Agregar nuevo guerrero
+
+
         document.getElementById('form-agregar').addEventListener('submit', function(e) {
             e.preventDefault();
 
