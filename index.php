@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Dragon Ball Z - Gestión de Guerreros
  * Página principal con listado, búsqueda, filtros y paginación
@@ -149,9 +150,9 @@ if ($url_base === '?') $url_base = '?';
             <?php foreach ($personajes as $p): ?>
                 <article class="card" id="card-<?php echo h($p['id']); ?>" style="--i:0">
                     <div class="media">
-                        <img src="<?php echo h($p['imagen']); ?>" 
-                             alt="<?php echo h($p['nombre']); ?>"
-                             onerror="this.src='https://via.placeholder.com/300x200?text=Sin+Imagen'" />
+                        <img src="<?php echo h($p['imagen']); ?>"
+                            alt="<?php echo h($p['nombre']); ?>"
+                            onerror="this.src='https://via.placeholder.com/300x200?text=Sin+Imagen'" />
                     </div>
                     <div class="box">
                         <h3><?php echo h($p['nombre']); ?></h3>
@@ -367,9 +368,9 @@ if ($url_base === '?') $url_base = '?';
                 });
         });
 
-        // ========================================================================
-        // ELIMINAR GUERRERO
-        // ========================================================================
+
+        // eliminar guerrero
+
         document.getElementById('grid').addEventListener('click', async function(e) {
             const btn = e.target.closest('.btn.eliminar');
             if (!btn) return;
@@ -416,9 +417,9 @@ if ($url_base === '?') $url_base = '?';
                 });
         });
 
-        // ========================================================================
-        // ABRIR MODAL DE EDICIÓN
-        // ========================================================================
+
+        //  edicion
+
         document.getElementById('grid').addEventListener('click', function(e) {
             const btnEdit = e.target.closest('.btn.editar');
             if (!btnEdit) return;
@@ -445,16 +446,16 @@ if ($url_base === '?') $url_base = '?';
             document.getElementById('modal-editar').style.display = 'flex';
         });
 
-        // ========================================================================
-        // CERRAR MODAL
-        // ========================================================================
+
+        // modal
+
         function cerrarModal() {
             document.getElementById('modal-editar').style.display = 'none';
         }
 
-        // ========================================================================
-        // GUARDAR EDICIÓN
-        // ========================================================================
+
+        // guardar edicion
+
         document.getElementById('form-editar').addEventListener('submit', function(e) {
             e.preventDefault();
 
@@ -498,9 +499,9 @@ if ($url_base === '?') $url_base = '?';
                 });
         });
 
-        // ========================================================================
+
         // CERRAR MODAL AL HACER CLIC FUERA
-        // ========================================================================
+
         window.onclick = function(event) {
             const modal = document.getElementById('modal-editar');
             if (event.target === modal) {
@@ -508,14 +509,16 @@ if ($url_base === '?') $url_base = '?';
             }
         }
     </script>
-    <!-- FOOTER -->
+
+    //footer
+
     <footer class="footer">
         <p>
-            <strong>Dragon Ball Z - Guerreros</strong> | 
+            <strong>Dragon Ball Z - Guerreros</strong> |
             Programación Web II - Final 2025
         </p>
         <p>
-            Cappi Juan Manuel & Jonathan Gennari | 
+            Cappi Juan Manuel & Jonathan Gennari |
             Comisión: <strong>ACN2BV</strong>
         </p>
     </footer>
