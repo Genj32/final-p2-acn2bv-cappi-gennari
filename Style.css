@@ -1,11 +1,4 @@
-/**
- * Dragon Ball Z - Estilos
- * Sistema de temas claro/oscuro con CSS Variables
- */
-
-/* ============================================================================
-   VARIABLES CSS - TEMA CLARO (por defecto)
-   ============================================================================ */
+/*Tema claro*/
 :root {
     --bg: #ffffff;
     --text: #111111;
@@ -18,9 +11,7 @@
     --shadow: rgba(2, 6, 23, 0.18);
 }
 
-/* ============================================================================
-   VARIABLES CSS - TEMA OSCURO
-   ============================================================================ */
+/*Tema oscuro*/
 .tema-oscuro {
     --bg: #0e1116;
     --text: #e8eef6;
@@ -33,9 +24,7 @@
     --shadow: rgba(0, 0, 0, 0.4);
 }
 
-/* ============================================================================
-   ESTILOS GENERALES
-   ============================================================================ */
+/* Generales*/
 * {
     box-sizing: border-box;
 }
@@ -66,9 +55,7 @@ h2 {
     font-size: 1.3rem;
 }
 
-/* ============================================================================
-   PANEL (formularios de búsqueda y agregar)
-   ============================================================================ */
+/*Panel (formularios de búsqueda y agregar)*/
 .panel {
     display: flex;
     gap: 1rem;
@@ -130,9 +117,7 @@ h2 {
     transform: translateY(-2px);
 }
 
-/* ============================================================================
-   GRID DE TARJETAS
-   ============================================================================ */
+/*Grid de tarjetas*/
 .grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
@@ -214,9 +199,7 @@ h2 {
     opacity: 0.8;
 }
 
-/* ============================================================================
-   BOTONES DE TARJETAS (Editar y Eliminar)
-   ============================================================================ */
+/*Botones de tarjetas (Editar y Eliminar)*/
 .btn {
     padding: 0.4rem 0.8rem;
     border: 1px solid var(--acc);
@@ -255,9 +238,7 @@ h2 {
     color: #fff;
 }
 
-/* ============================================================================
-   PAGINACIÓN
-   ============================================================================ */
+/*Paginación*/
 .paginacion {
     display: flex;
     gap: 0.5rem;
@@ -294,9 +275,7 @@ h2 {
     border: 1px solid var(--acc);
 }
 
-/* ============================================================================
-   MENSAJES DE NOTIFICACIÓN
-   ============================================================================ */
+/*Mensajes de notificación*/
 .msg {
     margin-top: 1rem;
     padding: 0.8rem 1rem;
@@ -317,9 +296,7 @@ h2 {
     color: var(--err);
 }
 
-/* ============================================================================
-   MODAL DE EDICIÓN
-   ============================================================================ */
+/*Edición*/
 .modal {
     display: none;
     position: fixed;
@@ -362,7 +339,7 @@ h2 {
     color: var(--err);
 }
 
-.modal-content form > div {
+.modal-content form>div {
     margin-bottom: 1rem;
 }
 
@@ -406,14 +383,13 @@ h2 {
     color: #fff;
 }
 
-/* ============================================================================
-   ANIMACIONES
-   ============================================================================ */
+/*Animaciones*/
 @keyframes cardIn {
     from {
         opacity: 0;
         transform: translateY(10px) scale(0.995);
     }
+
     to {
         opacity: 1;
         transform: translateY(0) scale(1);
@@ -424,6 +400,7 @@ h2 {
     from {
         opacity: 0;
     }
+
     to {
         opacity: 1;
     }
@@ -434,6 +411,7 @@ h2 {
         transform: translateY(-50px);
         opacity: 0;
     }
+
     to {
         transform: translateY(0);
         opacity: 1;
@@ -445,15 +423,14 @@ h2 {
         transform: translateX(-20px);
         opacity: 0;
     }
+
     to {
         transform: translateX(0);
         opacity: 1;
     }
 }
 
-/* ============================================================================
-   DISEÑO RESPONSIVO
-   ============================================================================ */
+/*Responsivo*/
 
 /* Tablets */
 @media (max-width: 768px) {
@@ -505,9 +482,7 @@ h2 {
     }
 }
 
-/* ============================================================================
-   FOOTER SIMPLE
-   ============================================================================ */
+/*Footer*/
 .footer {
     margin-top: 3rem;
     padding: 1.5rem;
@@ -534,7 +509,7 @@ h2 {
         padding: 1rem;
         font-size: 0.85rem;
     }
-    
+
     .footer p {
         font-size: 0.8rem;
     }
