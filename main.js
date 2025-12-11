@@ -11,7 +11,7 @@ document.getElementById('form-agregar').onsubmit = async function (e) {
     const json = await res.json();
     if (json.success) {
         msg('Guerrero agregado');
-        location.reload();
+        location.Reload();
     } else msg(json.error || 'Error', false);
 };
 

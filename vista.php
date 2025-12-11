@@ -10,7 +10,7 @@ $pagina = max(1, (int)($_GET['pagina'] ?? 1));
 
 $guerreros = $g->todos($buscar, $raza, $pagina);
 $total = $g->total($buscar, $raza);
-$paginas = ceil($total / 8);
+$paginas = ceil($total / 7);
 $razas = $g->razas();
 
 // funcion para mantener los parametros en la paginacion
