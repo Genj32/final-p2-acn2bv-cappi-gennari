@@ -1,9 +1,12 @@
 <?php
+
+
 const DB_HOST = "localhost";
 const DB_USER = "root";
 const DB_PASS = "";
 const DB_NAME = "dbz_guerreros";
 
+// funcion para conectar a la base de datos
 function conectarDb(): PDO
 {
     try {
@@ -17,6 +20,7 @@ function conectarDb(): PDO
     }
 }
 
+// funcion para escapar datos y evitar XSS
 function h($str): string
 {
     return htmlspecialchars($str, ENT_QUOTES, 'UTF-8');

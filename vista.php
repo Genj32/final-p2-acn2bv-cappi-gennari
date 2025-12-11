@@ -1,5 +1,7 @@
 <?php
 require_once 'Guerrero.php';
+
+// instancia del objeto Guerrero
 $g = new Guerrero();
 
 $buscar = $_GET['buscar'] ?? '';
@@ -11,6 +13,7 @@ $total = $g->total($buscar, $raza);
 $paginas = ceil($total / 8);
 $razas = $g->razas();
 
+// funcion para mantener los parametros en la paginacion
 function params()
 {
     $p = $_GET;
@@ -113,4 +116,5 @@ function params()
     </div>
 </div>
 
-<div id="msg" class="msg" style="display:none;"></div>
+<!-- Mensaje dinamico  -->
+ <div id="msg" class="msg" style="display:none;"></div>

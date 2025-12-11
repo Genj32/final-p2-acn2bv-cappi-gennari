@@ -1,7 +1,9 @@
+// funcion 
 function msg(text, ok = true) {
     Swal.fire({ icon: ok ? 'success' : 'error', title: ok ? '¡Éxito!' : 'Error', text, timer: 2500, showConfirmButton: false });
 }
 
+// funcion para agregar un nuevo guerrero dinamico sin recarcar la pagina
 document.getElementById('form-agregar').onsubmit = async function (e) {
     e.preventDefault();
     const datos = Object.fromEntries(new FormData(this));
@@ -13,6 +15,7 @@ document.getElementById('form-agregar').onsubmit = async function (e) {
     } else msg(json.error || 'Error', false);
 };
 
+// funcion para eliminar un guerrero dinamico sin recarcar la pagina
 document.getElementById('grid').onclick = async function (e) {
     const btn = e.target.closest('button');
     if (!btn) return;
@@ -25,6 +28,7 @@ document.getElementById('grid').onclick = async function (e) {
         msg('Eliminado');
     }
 
+    // funcion para editar un guerrero dinamico sin recarcar la pagina
     if (btn.classList.contains('editar')) {
         const card = btn.closest('.card');
         document.getElementById('edit-id').value = id;
@@ -37,8 +41,11 @@ document.getElementById('grid').onclick = async function (e) {
     }
 };
 
+// funcion para cerrar el modal de editar
 function cerrarModal() { document.getElementById('modal-editar').style.display = 'none'; }
 
+
+// funcion para actualizar un guerrero dinamico sin recarcar la pagina
 document.getElementById('form-editar').onsubmit = async function (e) {
     e.preventDefault();
     const id = document.getElementById('edit-id').value;
@@ -49,6 +56,8 @@ document.getElementById('form-editar').onsubmit = async function (e) {
         imagen: document.getElementById('edit-imagen').value,
         poder: document.getElementById('edit-poder').value
     };
+
+    // enviar datos al servidor
     await fetch(`api.php?id=${id}`, { method: 'PUT', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(datos) });
     msg('Actualizado');
     location.reload();

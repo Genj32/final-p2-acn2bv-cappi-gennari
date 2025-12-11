@@ -10,6 +10,8 @@ class Guerrero
         $this->db = conectarDb();
     }
 
+
+    // funcion para guerreros con filtros y paginacion
     public function todos($buscar = '', $raza = '', $pagina = 1)
     {
         $where = "WHERE 1=1";
@@ -35,6 +37,8 @@ class Guerrero
         return $stmt->fetchAll();
     }
 
+
+    // funcion para contar total de guerreros con filtros
     public function total($buscar = '', $raza = '')
     {
         $where = "WHERE 1=1";
@@ -52,11 +56,13 @@ class Guerrero
         return $stmt->fetchColumn();
     }
 
+    // funcion para obtener las razas disponibles
     public function razas()
     {
         return $this->db->query("SELECT DISTINCT raza FROM guerreros ORDER BY raza")->fetchAll(PDO::FETCH_COLUMN);
     }
 
+        // funcion para crear un nuevo guerrero
     public function crear($datos)
     {
         $sql = "INSERT INTO guerreros (nombre, raza, descripcion, imagen, poder) VALUES (?, ?, ?, ?, ?)";
@@ -71,6 +77,7 @@ class Guerrero
         return $this->db->lastInsertId();
     }
 
+        // funcion para actualizar un guerrero existente
     public function actualizar($id, $datos)
     {
         $sql = "UPDATE guerreros SET nombre=?, raza=?, descripcion=?, imagen=?, poder=? WHERE id=?";
@@ -85,12 +92,14 @@ class Guerrero
         ]);
     }
 
+        // funcion para eliminar un guerrero
     public function eliminar($id)
     {
         $stmt = $this->db->prepare("DELETE FROM guerreros WHERE id = ?");
         $stmt->execute([$id]);
     }
 
+        // funcion para obtener un guerrero por id
     public function uno($id)
     {
         $stmt = $this->db->prepare("SELECT * FROM guerreros WHERE id = ?");

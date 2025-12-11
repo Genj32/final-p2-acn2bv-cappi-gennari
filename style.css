@@ -331,7 +331,7 @@ h2 {
     }
 }
 
-/* Responsivo */
+/* Responsivo tamble y telefono */
 @media (max-width: 768px) {
     .grid {
         grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
