@@ -28,12 +28,21 @@ class Guerrero
         $porPagina = 7;
         $offset = ($pagina - 1) * $porPagina;
 
+        //  consulta con limites para paginacion
         $sql = "SELECT * FROM guerreros $where ORDER BY id DESC LIMIT :limit OFFSET :offset";
+
+        // prepara la consulta y previene la inyeccion SQL
         $stmt = $this->db->prepare($sql);
+
+        // vincula los parametros de las variables filtro 
         foreach ($params as $k => $v) $stmt->bindValue($k, $v);
+
+        // convierte los valores de limit y offset a enteros
         $stmt->bindValue(':limit', $porPagina, PDO::PARAM_INT);
         $stmt->bindValue(':offset', $offset, PDO::PARAM_INT);
+        // ejecuta la consulta
         $stmt->execute();
+        // retorna los resultados 
         return $stmt->fetchAll();
     }
 

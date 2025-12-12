@@ -18,4 +18,5 @@ $clase = $tema === 'oscuro' ? 'tema-oscuro' : '';
     <header>
         <h1>Dragon Ball Z – Guerreros</h1>
         <span class="muted">Tema: <strong><?= ucfirst($tema) ?></strong></span>
-    </header>
+    </header>    
+ </body>
